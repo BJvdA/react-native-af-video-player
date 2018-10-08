@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import {
   Text,
   StyleSheet,
-  StatusBar,
   Dimensions,
   BackHandler,
   Animated,
@@ -13,7 +12,7 @@ import {
 import VideoPlayer from 'react-native-video'
 import KeepAwake from 'react-native-keep-awake'
 import Orientation from 'react-native-orientation'
-import Icons from 'react-native-vector-icons/MaterialIcons'
+import FontAwesome5Pro from 'react-native-vector-icons/FontAwesome5Pro'
 import { Controls } from './'
 import { checkSource } from './utils'
 const Win = Dimensions.get('window')
@@ -89,7 +88,7 @@ class Video extends Component {
   onLoad(data) {
     if (!this.state.loading) return
     this.props.onLoad(data)
-    const { height, width } = data.naturalSize   
+    const { height, width } = data.naturalSize
     const ratio = height === 'undefined' && width === 'undefined' ?
       (9 / 16) : (height / width)
     const inlineHeight = this.props.lockRatio ?
@@ -315,8 +314,8 @@ class Video extends Component {
         style={[styles.background, fullScreen ? styles.fullScreen : inline]}
       >
         <Text style={textStyle}>Retry</Text>
-        <Icons
-          name="replay"
+        <FontAwesome5Pro
+          name="undo-alt"
           size={60}
           color={this.props.theme}
           onPress={() => this.setState({ renderError: false })}
@@ -375,7 +374,6 @@ class Video extends Component {
           fullScreen ? null : style
         ]}
       >
-        <StatusBar hidden={fullScreen} />
         {
           ((loading && placeholder) || currentTime < 0.01) &&
           <Image resizeMode="cover" style={styles.image} {...checkSource(placeholder)} />

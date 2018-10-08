@@ -49,8 +49,8 @@ const ControlBar = (props) => {
       <ToggleIcon
         paddingRight
         onPress={() => props.toggleFS()}
-        iconOff="fullscreen"
-        iconOn="fullscreen-exit"
+        iconOff="expand"
+        iconOn="compress"
         isOn={fullscreen}
         theme={theme.fullscreen}
       />}

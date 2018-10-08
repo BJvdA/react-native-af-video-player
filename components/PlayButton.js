@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { View, StyleSheet, TouchableOpacity } from 'react-native'
-import Icons from 'react-native-vector-icons/MaterialIcons'
+import FontAwesome5Pro from 'react-native-vector-icons/FontAwesome5Pro'
 
 const backgroundColor = 'transparent'
 
@@ -22,9 +22,9 @@ const PlayButton = props => (
     <TouchableOpacity
       onPress={() => props.onPress()}
     >
-      <Icons
+      <FontAwesome5Pro
         style={styles.playButton}
-        name={props.paused ? 'play-circle-outline' : 'pause-circle-outline'}
+        name={props.paused ? 'play-circle' : 'pause-circle'}
         color={props.theme}
         size={75}
       />

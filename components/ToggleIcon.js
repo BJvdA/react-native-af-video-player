@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { View, StyleSheet, TouchableOpacity } from 'react-native'
-import Icons from 'react-native-vector-icons/MaterialIcons'
+import FontAwesome5Pro from 'react-native-vector-icons/FontAwesome5Pro'
 
 const backgroundColor = 'transparent'
 
@@ -34,7 +34,7 @@ const ToggleIcon = (props) => {
       <TouchableOpacity
         onPress={() => props.onPress()}
       >
-        <Icons
+        <FontAwesome5Pro
           style={padding}
           name={isOn ? iconOn : iconOff}
           color={theme}
